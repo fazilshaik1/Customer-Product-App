@@ -26,9 +26,6 @@ class CustomerServiceImplTest {
 	
 	@Autowired
 	private ICustomerService service;
-	
-	@Autowired
-	private EntityManager em;
 
 	@Test
 	public void testAdd_1() {

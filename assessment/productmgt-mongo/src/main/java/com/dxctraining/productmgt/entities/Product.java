@@ -1,27 +1,24 @@
-package com.dxctraining.mongoexperiments.suppliermgt.entities;
+package com.dxctraining.productmgt.entities;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Objects;
 
-@Document("suppliers")
-public class Supplier {
+@Document("products")
+public class Product {
 
     @Id
     private String id;
 
     private String name;
 
-    private String password;
-
-    public Supplier(){
+    public Product(){
 
     }
 
-    public Supplier(String name, String password){
+    public Product(String name){
         this.name=name;
-        this.password = password;
     }
 
     public String getId() {
@@ -40,20 +37,12 @@ public class Supplier {
         this.name = name;
     }
 
-    public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 	@Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Supplier supplier = (Supplier) o;
-        return Objects.equals(id, supplier.id);
+        Product product = (Product) o;
+        return Objects.equals(id, product.id);
     }
 
     @Override

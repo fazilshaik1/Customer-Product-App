@@ -1,4 +1,4 @@
-package com.dxctraining.mongoexperiments.suppliermgt;
+package com.dxctraining.productmgt;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
