@@ -13,7 +13,6 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.dxctraining.productmgt.entities.Product;
 import com.dxctraining.productmgt.exceptions.InvalidArgumentException;
-import com.dxctraining.productmgt.exceptions.ProductNotFoundException;
 
 @ExtendWith(SpringExtension.class)
 @DataMongoTest
@@ -38,13 +37,13 @@ class ProductServiceImplTest {
 		Assertions.assertEquals(product.getId(),fetched.getId());
 		Assertions.assertEquals(name,fetched.getName());
 	}
-	/*   java.lang.IllegalArgumentException is thrown instead of ProductNotFoundException
+	
 	@Test
 	public void testFindById_1() {
 		Executable execute=()->service.findById(null);
-		Assertions.assertThrows(ProductNotFoundException.class, execute);
+		Assertions.assertThrows(InvalidArgumentException.class, execute);
 	}
-	*/
+	
 	@Test
 	public void testFindById_2() {
 		String name = "macbook";

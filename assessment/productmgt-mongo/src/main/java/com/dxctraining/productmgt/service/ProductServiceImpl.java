@@ -34,6 +34,7 @@ public class ProductServiceImpl implements IProductService{
 
 	@Override
     public Product findById(String id) {
+		validateId(id);
       Optional<Product>optional= dao.findById(id);
       boolean exist=optional.isPresent();
       if(!exist){
@@ -42,6 +43,13 @@ public class ProductServiceImpl implements IProductService{
       Product product=optional.get();
        return product;
     }
+
+	private void validateId(String id) {
+		if(id == null) {
+			throw new InvalidArgumentException("id should not be null");
+		}
+		
+	}
 
 	@Override
 	public List<Product> findProductByName(String name) {
